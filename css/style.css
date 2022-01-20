@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+:root {
+  --white: rgba(245, 245, 245, 0.725);
+  --light-blue: rgba(70, 252, 235, 1);
+  --dark-blue: rgba(70, 252, 235, .625);
+  --light-purple: rgb(164, 63, 251);
+  --dark-purple: rgba(118, 85, 175, 0.5);
+}
+
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background: var(--light-purple);
+  background: radial-gradient(
+    circle,
+    var(--light-purple) 0%,
+    var(--light-blue) 100%
+  );
+  font-family: 'Acme', cursive; 
+   letter-spacing: 0.0525rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  height: 55rem;
+  width: 40rem;
+  margin: 5rem auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation: moveDown 1s ease-out;
+}
+
+.container__img {
+  cursor: pointer;
+  margin: 5rem auto 1rem auto;
+  height: 25rem;
+  width: 25rem;
+}
+
+
+.container__img img {
+  border-radius: 20px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/*Titles*/
+h2 {
+  font-size: 2.75rem;
+  margin-bottom: 0.25rem;
+}
+h3 {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+h2:hover ,h3:hover{
+    color: rgba(245, 245, 245, 0.65);
+    cursor: pointer;
+    letter-spacing: 1.5px;
+}
+
+/*Progress Bar*/
+.container__progress {
+  background: var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 4rem 2rem;
+  height: 0.4rem;
+  width: 75%;
+}
+.container__progress--secondary {
+  background: var(--dark-blue);
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  margin-bottom: 0.2rem;
+}
+
+.container__progress--duration {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Controls*/
+.container__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control__icon {
+  cursor: pointer;
+  margin: 0 1rem;
+  fill: var(--white);
+  width: 5rem;
+  height: 5rem;
+  transition: all 0.4s;
+}
+
+.control__icon:hover {
+  fill: var(--dark-blue);
+}
+
+/*Media Query and Animations*/
+@media screen and (max-width: 376px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  60% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
