@@ -129,7 +129,7 @@ h2:hover ,h3:hover{
 /*Media Query and Animations*/
 @media screen and (max-width: 480px) {
   html {
-    font-size: 40.625%;
+    font-size: 43.75%;
   }
 }
 
